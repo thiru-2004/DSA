@@ -1,0 +1,39 @@
+def locate_Number(list,element):
+    low,high=0,len(list)-1
+    while low<=high:
+        mid=(low+high)//2
+        print("low:",low,"high:",high,"mid:",mid)
+        if list[mid]==element:
+            return mid
+        elif list[mid]<element:
+            high=mid-1
+        elif list[mid]>element:
+            low=mid+1
+    return -1
+
+list=[9,7,6,4,3,2,1]
+element=int(input("enter the search element"))
+result=locate_Number(list,element)
+if(list[result]==element):
+    print("the element",list[result],"is found at",result,"position")
+else:
+    print("element not found")
+
+
+
+o/p:
+##for not found###
+enter the search element10
+low: 0 high: 6 mid: 3
+low: 0 high: 2 mid: 1
+low: 0 high: 0 mid: 0
+element not found
+
+
+####for found ####
+enter the search element6
+low: 0 high: 6 mid: 3
+low: 0 high: 2 mid: 1
+low: 2 high: 2 mid: 2
+the element 6 is found at 2 position
+
